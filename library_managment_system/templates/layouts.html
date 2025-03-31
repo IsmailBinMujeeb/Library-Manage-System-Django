@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/layouts.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {% if request.path == "/user/register/" %}
+        <link rel="stylesheet" href="{% static 'css/user_register_page.css' %}">
+    {% elif request.path == "/user/login/" %}
+        <link rel="stylesheet" href="{% static 'css/user_register_page.css' %}">
+    {% endif %}
+
+    
+
     <title>{% block title %} Library Management System {% endblock %}</title>
 </head>
 <body>
@@ -17,11 +26,18 @@
                 <li><a href="#">Books</a></li>
                 <li><a href="#">Categories</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="#">Profile</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout_page' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login_page' %}">Login</a></li>
+                {% endif %}
                 <li><button class="dark-mode-toggle"><i class="fa-solid fa-cloud-sun"></i></button></li>
             </ul>
             <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
         </nav>
+    {% endblock %}
+    {% block content %}
+        
     {% endblock %}
     <script>
         document.addEventListener("DOMContentLoaded", () => {
