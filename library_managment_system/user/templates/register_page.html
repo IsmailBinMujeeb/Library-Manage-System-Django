@@ -1,0 +1,17 @@
+{% extends 'layouts.html' %}
+
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block navbar %}
+    <!-- It should be empty to not show a navbar -->
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'register_page' %}", method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
