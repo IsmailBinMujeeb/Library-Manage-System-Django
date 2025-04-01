@@ -1,0 +1,42 @@
+.container {
+    background: white;
+    padding: 20px;
+    margin: 10px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* width: 0px; */
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.03);
+}
+
+.book-cover {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.book-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+.book-author, .book-genre {
+    font-size: 1rem;
+    color: #777;
+}
+
+.reviews {
+    margin-top: 20px;
+    padding: 15px;
+    background: #ffebcc;
+    color: #333;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}

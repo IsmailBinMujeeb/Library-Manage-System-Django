@@ -1,33 +1,12 @@
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
 
-.container {
-    width: 100%;
-    max-width: 400px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 20px;
-}
 
 /* Form Styles */
 form {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    padding: 20px;
+    margin: 20px auto;
 }
 
 form p {
@@ -63,10 +42,11 @@ input:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-button {
+form button {
     background-color: #007bff;
     color: white;
     padding: 12px;
+    margin: 20px;
     border: none;
     border-radius: 5px;
     font-size: 18px;
@@ -74,22 +54,12 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
+form button:hover {
     background-color: #0056b3;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        max-width: 90%;
-    }
-}
-
 @media (max-width: 480px) {
-    h2 {
-        font-size: 20px;
-    }
-    input, button {
+    input, form button {
         font-size: 14px;
     }
 }
