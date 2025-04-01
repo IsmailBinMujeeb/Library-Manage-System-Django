@@ -1,0 +1,21 @@
+{% extends 'layouts.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% for book in books %}
+            <div class="book-card">
+                <img src="{{ book.cover_image.url }}" alt="Book Cover" class="book-cover">
+                <div class="book-info">
+                    <h2 class="book-title"><a href="/user/book/{{book.id}}/">{{book.book_name}}</a></h2>
+                    <p class="book-author">by {{book.auther}}</p>
+                    <p class="book-genre">Genre: {{book.get_category_display}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

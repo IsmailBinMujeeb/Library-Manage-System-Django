@@ -1,0 +1,22 @@
+{% extends 'layouts.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/book_page.css' %}">
+{% endblock %}
+
+{% block title %}
+    {{ book.book_name }} - Book By {{ book.auther }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <img src="{{ book.cover_image.url }}" alt="Book Cover" class="book-cover">
+    <div class="book-info">
+        <p class="book-title">{{ book.book_name }}</p>
+        <p class="book-author">by {{book.auther}}</p>
+        <p class="book-genre">Genre: {{book.get_category_display}}</p>
+    </div>
+    <div class="reviews">⭐⭐⭐⭐⭐<br/>A masterpiece! Absolutely loved it!"</div>
+</div>
+{% endblock %}
